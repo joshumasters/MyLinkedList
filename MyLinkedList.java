@@ -1,4 +1,3 @@
-package jmasters.algorithms.exercises;
 
 import java.util.Scanner;
 
@@ -45,8 +44,7 @@ public class MyLinkedList {
         if (head == null) {
             System.out.println("There is nothing in this list");
         } else {
-            System.out.println(
-                    "Would you like to print from beginning or current list position? B = Beginning, C = Current");
+            System.out.println("Would you like to print from beginning or current list position? B = Beginning, C = Current");
             String input = scan.nextLine();
             if (input.equalsIgnoreCase("B")) {
                 current = head;
@@ -80,22 +78,20 @@ public class MyLinkedList {
     public void removeAtLocation() {
         System.out.println("Would you like to delete value at current location? Current Value = " + current.value + " Y/N?");
         String input = scan.nextLine();
+        int valueToRemove = 0;
         if (input.equalsIgnoreCase("Y")) {
             if (current == head) {
-                int valueToRemove = current.value;
+                valueToRemove = current.value;
                 head = current.next;
-                System.out.println(valueToRemove + " has been removed from the list");
             } else {
                 Node n = head;
-                System.out.println("n = " + n.next.value);
-                System.out.println("current = " + current.value);
                 while (n.next != current) {
                     n = n.next;
                 }
-                int valueToRemove = current.value;
+                valueToRemove = current.value;
                 n.next = current.next;
-                System.out.println(valueToRemove + " has been removed from the list");
             }
+            System.out.println(valueToRemove + " has been removed from the list");
         } else {
             System.out.println("Try using advanceInList and returnToHead to navigate to desired node");
         }
